@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Show</title>
+    </head>
+    <body>
+        <h1>Name: {{person.first_name}}</h1>
+
+        <p>Pets:</p>
+        {%for pet in petz%}
+        <p>{{pet.pet_name}} the {{pet.pet_type}}</p>
+        {%endfor%}
+        
+        <p><a href="/pet/dashboard">Back</a></p>
+    </body>
+</html>

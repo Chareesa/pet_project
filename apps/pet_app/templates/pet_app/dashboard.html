@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <h1>Pet App!</h1> <a href="/logout">logout</a>
+
+        <p><a href='/pet/add'>Add a pet</a></p>
+        <p>Your pets</p>
+        {%for pet in petz%}
+        <p>{{pet.pet_name}} the {{pet.pet_type}} <a href="/pet/destroy/{{pet.id}}">delete</a></p>
+        {%endfor%}
+        <hr>
+
+        Other Users
+        <hr>
+
+        <table>
+            {%for user in other_users%}
+                <tr>
+                    <td>Name:<a href="/pet/show/{{user.id}}"> {{user.first_name}} </a></td>
+                    <td>Count: {{user.pets_owned.count}}</td>
+                    <!-- referenced from models.py under ForeignKey parameters -->
+                </tr>
+            {%endfor%}
+        </table>
+    </body>
+</html>
+
+
+<!-- WE STOPPED AT MAKING A FORM ON THIS PAGE TO ADD PETS -->

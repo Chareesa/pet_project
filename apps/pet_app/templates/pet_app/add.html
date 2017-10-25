@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add Pet</title>
+    </head>
+    <body>
+        <h1>Add Pet</h1>
+
+        <form action="/pet/createPet" method="post" id="addPetForm">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="petType" placeholder="Pet Type">
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
